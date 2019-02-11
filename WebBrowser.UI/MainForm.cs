@@ -29,7 +29,7 @@ namespace WebBrowser.UI
 
         private void toolStripButton5_Click(object sender, EventArgs e)
         {
-            webBrowser1.Navigate(toolStripTextBox1.Text);
+            //webBrowser1.Navigate(toolStripTextBox1.Text);
         }
 
         private void toolStripTextBox1_KeyPress(object sender, KeyPressEventArgs e)
@@ -41,8 +41,36 @@ namespace WebBrowser.UI
         {
             if (e.KeyCode == Keys.Enter)
             {
-                webBrowser1.Navigate(toolStripTextBox1.Text);
+                //webBrowser1.Navigate(toolStripTextBox1.Text);
             }
+        }
+
+        private void webBrowserTabControl1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void aboutToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            System.Windows.Forms.MessageBox.Show("coded by Richard Chapman, instructor CPSC2713");
+        }
+
+        private void exitWebBrowserToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void newTabToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TabPage tp = new TabPage("new tab");
+            tabControl1.TabPages.Add(tp);
+            webBrowserTabControl wbtc = new webBrowserTabControl();
+            tp.Controls.Add(wbtc);
+        }
+
+        private void closeCurrentTabToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tabControl1.TabPages.Remove(tabControl1.SelectedTab);
         }
     }
 }
