@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WebBrowser.Data
+namespace WebBrowser.Logic
 {
     public class Class1
     {
