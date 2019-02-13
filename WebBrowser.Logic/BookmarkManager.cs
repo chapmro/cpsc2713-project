@@ -12,7 +12,7 @@ namespace WebBrowser.Logic
         public static void AddItem(BookmarkItem item)
         {
             BookmarksTableAdapter adapter = new BookmarksTableAdapter();
-            adapter.Insert(1, item.URL, item.title); // why does this need an id parameter? 
+            adapter.Insert( item.URL, item.title); // why does this need an id parameter? 
         }
         public static List<HistoryItem> GetAllItems()
         {
