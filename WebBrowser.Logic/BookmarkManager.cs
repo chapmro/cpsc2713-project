@@ -14,6 +14,7 @@ namespace WebBrowser.Logic
             BookmarksTableAdapter adapter = new BookmarksTableAdapter();
             adapter.Insert( item.URL, item.title); // why does this need an id parameter? 
         }
+
         public static List<HistoryItem> GetAllItems()
         {
             return null; 

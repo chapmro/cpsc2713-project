@@ -62,11 +62,6 @@
       <DependentUpon>BookmarksDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Class1.cs" />
-    <Compile Include="HistoryBookmarksDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HistoryBookmarksDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="HistoryDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -112,24 +107,13 @@
     <None Include="BookmarksDataSet.xss">
       <DependentUpon>BookmarksDataSet.xsd</DependentUpon>
     </None>
-    <None Include="HistoryBookmarksDataSet.xsc">
-      <DependentUpon>HistoryBookmarksDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="HistoryBookmarksDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>HistoryBookmarksDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="HistoryBookmarksDataSet.xss">
-      <DependentUpon>HistoryBookmarksDataSet.xsd</DependentUpon>
-    </None>
     <None Include="HistoryDataSet.xsc">
       <DependentUpon>HistoryDataSet.xsd</DependentUpon>
     </None>
     <None Include="HistoryDataSet.xsd">
+      <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>HistoryDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </None>
     <None Include="HistoryDataSet.xss">
       <DependentUpon>HistoryDataSet.xsd</DependentUpon>
