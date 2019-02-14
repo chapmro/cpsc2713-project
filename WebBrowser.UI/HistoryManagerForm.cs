@@ -23,7 +23,7 @@ namespace WebBrowser.UI
             var items = HistoryManager.GetAllItems();
             foreach (var item in items)
             {
-                listBox1.Items.Add(item.title+" "+item.URL+" "+item.date);
+                listBox1.Items.Add(item.date+": "+item.title+" "+item.URL);
                 // do better here
             }
         }

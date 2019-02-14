@@ -20,10 +20,10 @@ namespace WebBrowser.UI
 
         private void BookmarkManagerForm_Load(object sender, EventArgs e)
         {
-            var items = HistoryManager.GetAllItems();
+            var items = BookmarkManager.GetAllItems();
             foreach (var item in items)
             {
-                listBox1.Items.Add(item.title+" "+item.URL);
+                listBox1.Items.Add(item.URL+" "+item.title);
                 // do better here
             }
         }
