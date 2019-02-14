@@ -9,15 +9,31 @@ namespace WebBrowser.Logic
 {
     public class BookmarkManager
     {
+        public static BookmarksTableAdapter adapter = new BookmarksTableAdapter();
+
         public static void AddItem(BookmarkItem item)
         {
-            BookmarksTableAdapter adapter = new BookmarksTableAdapter();
+           // BookmarksTableAdapter adapter = new BookmarksTableAdapter();
             adapter.Insert( item.URL, item.title); // why does this need an id parameter? 
         }
 
-        public static List<HistoryItem> GetAllItems()
+        public static List<BookmarkItem> GetAllItems()
         {
-            return null; 
+           // var adapter = new BookmarksTableAdapter();
+            var results = new List<BookmarkItem>();
+            var rows = adapter.GetData();
+
+            foreach (var row in rows)
+            {
+                BookmarkItem item = new BookmarkItem();
+                item.URL = row.URL;
+                item.id = row.Id;
+                item.title = row.Title;
+
+                results.Add(item);
+            }
+
+            return results;
         }
     }
 }

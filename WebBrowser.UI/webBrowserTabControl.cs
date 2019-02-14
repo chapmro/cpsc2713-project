@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WebBrowser.Logic;
 
 namespace WebBrowser.UI
 {
@@ -80,6 +81,12 @@ namespace WebBrowser.UI
             backUrls.Push(currentUrl);
             currentUrl = toolStripTextBox1.Text;
             webBrowser1.Navigate(currentUrl);
+            // add to history 
+            var item = new HistoryItem();
+            item.URL = currentUrl;
+            item.title = webBrowser1.DocumentTitle; // do better
+            item.date = DateTime.Now;
+            HistoryManager.AddItem(item);
         }
 
         private void toolStripTextBox1_Click(object sender, EventArgs e)
@@ -94,6 +101,8 @@ namespace WebBrowser.UI
                 backUrls.Push(currentUrl);
                 currentUrl = toolStripTextBox1.Text;
                 webBrowser1.Navigate(currentUrl);
+                // add to history 
+               
             }
         }
 
@@ -104,17 +113,41 @@ namespace WebBrowser.UI
 
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
+            // homepage
             if (currentUrl.Length != 0)
             {
                 backUrls.Push(currentUrl);
             }
             currentUrl = homepage;
             webBrowser1.Navigate(currentUrl);
+            var item = new HistoryItem();
+            item.URL = currentUrl;
+            item.title = webBrowser1.DocumentTitle;
+            item.date = DateTime.Now;
+            HistoryManager.AddItem(item);
         }
 
         private void newTabToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void toolStripButton6_Click(object sender, EventArgs e)
+        {
+            // add a bookmark
+            BookmarkItem item = new BookmarkItem();
+            item.URL = currentUrl;
+            item.title = webBrowser1.DocumentTitle; // better thing for the title? 
+            BookmarkManager.AddItem(item);
+        }
+
+        private void webBrowser1_Navigated(object sender, WebBrowserNavigatedEventArgs e)
+        {
+            var item = new HistoryItem();
+            item.URL = currentUrl;
+            item.title = webBrowser1.DocumentTitle;
+            item.date = DateTime.Now;
+            HistoryManager.AddItem(item);
         }
     }
    

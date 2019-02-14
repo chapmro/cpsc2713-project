@@ -9,14 +9,32 @@ namespace WebBrowser.Logic
 {
    public class HistoryManager
     {
+   
+        public static HistoryTableAdapter adapter = new HistoryTableAdapter();
+
         public static void AddItem(HistoryItem item)
         {
-            HistoryTableAdapter adapter = new HistoryTableAdapter();
-            adapter.Insert(item.URL, item.title, item.date); // why does this need an id parameter? 
+           // HisC:\Users\chapmro\Source\Repos\cpsc2713-project\WebBrowser.Logic\HistoryManager.cstoryTableAdapter adapter = new HistoryTableAdapter();
+            adapter.Insert(item.URL, item.title, item.date); 
         }
         public static List<HistoryItem> GetAllItems()
         {
-            return null;
+            //var adapter = new HistoryTableAdapter();
+            var results = new List<HistoryItem>();
+            var rows = adapter.GetData();
+
+            foreach (var row in rows)
+            {
+                HistoryItem item = new HistoryItem();
+                item.URL = row.URL;
+                item.id = row.Id;
+                item.title = row.Title;
+                item.date = row.Date;
+
+                results.Add(item);
+            }
+
+            return results;
         }
     }
 }
