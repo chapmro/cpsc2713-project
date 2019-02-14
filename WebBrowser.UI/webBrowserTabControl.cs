@@ -101,7 +101,7 @@ namespace WebBrowser.UI
                 backUrls.Push(currentUrl);
                 currentUrl = toolStripTextBox1.Text;
                 webBrowser1.Navigate(currentUrl);
-                // add to history 
+                // add to history with Navigated event handler
                
             }
         }
@@ -120,11 +120,7 @@ namespace WebBrowser.UI
             }
             currentUrl = homepage;
             webBrowser1.Navigate(currentUrl);
-            var item = new HistoryItem();
-            item.URL = currentUrl;
-            item.title = webBrowser1.DocumentTitle;
-            item.date = DateTime.Now;
-            HistoryManager.AddItem(item);
+           // will be added to history with Navigated event handler
         }
 
         private void newTabToolStripMenuItem_Click(object sender, EventArgs e)
@@ -143,6 +139,7 @@ namespace WebBrowser.UI
 
         private void webBrowser1_Navigated(object sender, WebBrowserNavigatedEventArgs e)
         {
+            // whenever  web page is loaded, add it to the history here
             var item = new HistoryItem();
             item.URL = currentUrl;
             item.title = webBrowser1.DocumentTitle;
