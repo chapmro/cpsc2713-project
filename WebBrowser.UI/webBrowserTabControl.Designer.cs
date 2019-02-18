@@ -1,6 +1,6 @@
 ﻿namespace WebBrowser.UI
 {
-    partial class webBrowserTabControl
+    public partial class webBrowserTabControl
     {
         /// <summary> 
         /// Required designer variable.

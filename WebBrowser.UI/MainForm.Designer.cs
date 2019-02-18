@@ -208,7 +208,7 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.TabPage tabPage1;
-        private webBrowserTabControl webBrowserTabControl1;
+        public webBrowserTabControl webBrowserTabControl1;
         private System.Windows.Forms.TabControl tabControl1;
     }
 }

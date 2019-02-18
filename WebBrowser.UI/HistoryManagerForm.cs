@@ -27,5 +27,10 @@ namespace WebBrowser.UI
                 // do better here
             }
         }
+
+        private void listBox1_MouseUp(object sender, MouseEventArgs e)
+        {
+  
+        }
     }
 }

@@ -39,6 +39,7 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(504, 212);
             this.listBox1.TabIndex = 0;
+            this.listBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.listBox1_MouseUp);
             // 
             // HistoryManagerForm
             // 
