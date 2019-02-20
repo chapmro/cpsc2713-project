@@ -36,5 +36,12 @@ namespace WebBrowser.Logic
 
             return results;
         }
+    
+        public static void Delete(HistoryItem item)
+        {
+            adapter.Delete(item.id, item.date);
+        }
+
+       
     }
 }
