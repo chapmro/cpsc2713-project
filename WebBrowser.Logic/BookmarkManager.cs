@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WebBrowser.Data.BookmarksDataSetTableAdapters;
+using WebBrowser.Data.BookmarksDatasetTableAdapters;
 
 namespace WebBrowser.Logic
 {
@@ -38,7 +38,7 @@ namespace WebBrowser.Logic
 
         public static void Delete(BookmarkItem item)
         {
-            adapter.Delete(item.id,item.URL);
+            adapter.Delete(item.id);
         }
     }
 }
