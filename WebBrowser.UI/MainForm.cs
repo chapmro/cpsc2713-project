@@ -84,5 +84,10 @@ namespace WebBrowser.UI
             var bkmkMgrForm = new BookmarkManagerForm();
             bkmkMgrForm.ShowDialog();
         }
+
+        private void webBrowserTabControl1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
