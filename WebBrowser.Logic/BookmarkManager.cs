@@ -14,7 +14,7 @@ namespace WebBrowser.Logic
         public static void AddItem(BookmarkItem item)
         {
            // BookmarksTableAdapter adapter = new BookmarksTableAdapter();
-            adapter.Insert( item.URL, item.title.Substring(0,50)); // why does this need an id parameter? 
+            adapter.Insert( item.URL, item.title); 
         }
 
         public static List<BookmarkItem> GetAllItems()
@@ -34,6 +34,11 @@ namespace WebBrowser.Logic
             }
 
             return results;
+        }
+
+        public static void Delete(BookmarkItem item)
+        {
+            adapter.Delete(item.id,item.URL);
         }
     }
 }

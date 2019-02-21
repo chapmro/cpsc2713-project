@@ -41,8 +41,8 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
             this.webBrowserTabControl1 = new WebBrowser.UI.webBrowserTabControl();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
             this.menuStrip2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -157,6 +157,14 @@
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // webBrowserTabControl1
+            // 
+            this.webBrowserTabControl1.Location = new System.Drawing.Point(-3, 0);
+            this.webBrowserTabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.webBrowserTabControl1.Name = "webBrowserTabControl1";
+            this.webBrowserTabControl1.Size = new System.Drawing.Size(517, 231);
+            this.webBrowserTabControl1.TabIndex = 0;
+            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -167,18 +175,11 @@
             this.tabControl1.Size = new System.Drawing.Size(700, 300);
             this.tabControl1.TabIndex = 0;
             // 
-            // webBrowserTabControl1
-            // 
-            this.webBrowserTabControl1.Location = new System.Drawing.Point(-3, 0);
-            this.webBrowserTabControl1.Margin = new System.Windows.Forms.Padding(2);
-            this.webBrowserTabControl1.Name = "webBrowserTabControl1";
-            this.webBrowserTabControl1.Size = new System.Drawing.Size(517, 231);
-            this.webBrowserTabControl1.TabIndex = 0;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(701, 292);
             this.Controls.Add(this.menuStrip2);
             this.Controls.Add(this.tabControl1);

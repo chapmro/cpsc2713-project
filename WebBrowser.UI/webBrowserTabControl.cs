@@ -38,6 +38,8 @@ namespace WebBrowser.UI
                 string gotoUrl = backUrls.Pop();
                 forwardUrls.Push(currentUrl);
                 currentUrl = gotoUrl;
+                toolStripProgressBar1.Value = 0;
+                toolStripStatusLabel1.Text = "loading";
                 webBrowser1.Navigate(currentUrl);
             }
         }
@@ -61,6 +63,8 @@ namespace WebBrowser.UI
                 string gotoUrl = forwardUrls.Pop();
                 backUrls.Push(currentUrl);
                 currentUrl = gotoUrl;
+                toolStripProgressBar1.Value = 0;
+                toolStripStatusLabel1.Text = "loading";
                 webBrowser1.Navigate(currentUrl);
             }
         }
@@ -70,6 +74,8 @@ namespace WebBrowser.UI
             // refresh button
             if (currentUrl.Length != 0)
             {
+                toolStripProgressBar1.Value = 0;
+                toolStripStatusLabel1.Text = "loading";
                 webBrowser1.Navigate(currentUrl);
             }
 
@@ -81,13 +87,15 @@ namespace WebBrowser.UI
             // go to web page
             backUrls.Push(currentUrl);
             currentUrl = toolStripTextBox1.Text;
+            toolStripProgressBar1.Value = 0;
+            toolStripStatusLabel1.Text = "loading";
             webBrowser1.Navigate(currentUrl);
             // add to history 
-            var item = new HistoryItem();
-            item.URL = currentUrl;
-            item.title = webBrowser1.DocumentTitle; // do better
-            item.date = DateTime.Now;
-            HistoryManager.AddItem(item);
+            //var item = new HistoryItem();
+            //item.URL = currentUrl;
+            //item.title = webBrowser1.DocumentTitle; // do better
+            //item.date = DateTime.Now;
+            //HistoryManager.AddItem(item);
         }
 
         private void toolStripTextBox1_Click(object sender, EventArgs e)
@@ -101,6 +109,8 @@ namespace WebBrowser.UI
             {
                 backUrls.Push(currentUrl);
                 currentUrl = toolStripTextBox1.Text;
+                toolStripProgressBar1.Value = 0;
+                toolStripStatusLabel1.Text = "loading";
                 webBrowser1.Navigate(currentUrl);
                 // add to history with Navigated event handler
 
@@ -121,6 +131,8 @@ namespace WebBrowser.UI
                 backUrls.Push(currentUrl);
             }
             currentUrl = homepage;
+            toolStripProgressBar1.Value = 0;
+            toolStripStatusLabel1.Text = "loading";
             webBrowser1.Navigate(currentUrl);
             // will be added to history with Navigated event handler
         }
@@ -136,6 +148,10 @@ namespace WebBrowser.UI
             BookmarkItem item = new BookmarkItem();
             item.URL = currentUrl;
             item.title = webBrowser1.DocumentTitle; // better thing for the title? 
+            if (item.title == null)
+            {
+                item.title = "Default";
+            }
             BookmarkManager.AddItem(item);
         }
 
@@ -148,6 +164,8 @@ namespace WebBrowser.UI
             item.date = DateTime.Now;
             HistoryManager.AddItem(item);
             //webBrowser1.Document.Body.MouseOver += new HtmlElementEventHandler(webBrowser1_MouseOver);
+            toolStripProgressBar1.Value = 100;
+            toolStripStatusLabel1.Text = "done";
         }
 
 
@@ -164,7 +182,10 @@ namespace WebBrowser.UI
 
         private void webBrowser1_ProgressChanged(object sender, WebBrowserProgressChangedEventArgs e)
         {
-            toolStripProgressBar1.Value += 1;
+            if (toolStripProgressBar1.Value < 95)
+            {
+                toolStripProgressBar1.Value += 5;
+            }
         }
     }
        
