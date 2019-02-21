@@ -41,8 +41,9 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.webBrowserTabControl1 = new WebBrowser.UI.webBrowserTabControl();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.clearHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.webBrowserTabControl1 = new WebBrowser.UI.webBrowserTabControl();
             this.menuStrip2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -111,7 +112,8 @@
             // 
             this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.manageHistoryToolStripMenuItem,
-            this.manageBookMarksToolStripMenuItem});
+            this.manageBookMarksToolStripMenuItem,
+            this.clearHistoryToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             this.toolsToolStripMenuItem.Size = new System.Drawing.Size(47, 22);
             this.toolsToolStripMenuItem.Text = "Tools";
@@ -157,14 +159,6 @@
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // webBrowserTabControl1
-            // 
-            this.webBrowserTabControl1.Location = new System.Drawing.Point(-3, 0);
-            this.webBrowserTabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.webBrowserTabControl1.Name = "webBrowserTabControl1";
-            this.webBrowserTabControl1.Size = new System.Drawing.Size(517, 231);
-            this.webBrowserTabControl1.TabIndex = 0;
-            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -174,6 +168,21 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(700, 300);
             this.tabControl1.TabIndex = 0;
+            // 
+            // clearHistoryToolStripMenuItem
+            // 
+            this.clearHistoryToolStripMenuItem.Name = "clearHistoryToolStripMenuItem";
+            this.clearHistoryToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.clearHistoryToolStripMenuItem.Text = "Clear History";
+            this.clearHistoryToolStripMenuItem.Click += new System.EventHandler(this.clearHistoryToolStripMenuItem_Click);
+            // 
+            // webBrowserTabControl1
+            // 
+            this.webBrowserTabControl1.Location = new System.Drawing.Point(-3, 0);
+            this.webBrowserTabControl1.Margin = new System.Windows.Forms.Padding(2);
+            this.webBrowserTabControl1.Name = "webBrowserTabControl1";
+            this.webBrowserTabControl1.Size = new System.Drawing.Size(517, 231);
+            this.webBrowserTabControl1.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -211,5 +220,6 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabControl tabControl1;
         private webBrowserTabControl webBrowserTabControl1;
+        private System.Windows.Forms.ToolStripMenuItem clearHistoryToolStripMenuItem;
     }
 }

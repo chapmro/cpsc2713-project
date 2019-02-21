@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WebBrowser.Logic;
 
 namespace WebBrowser.UI
 {
@@ -88,6 +89,15 @@ namespace WebBrowser.UI
         private void webBrowserTabControl1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void clearHistoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var items = HistoryManager.GetAllItems();
+            foreach (var item in items)
+            {
+                HistoryManager.Delete(item);
+            }
         }
     }
 }
